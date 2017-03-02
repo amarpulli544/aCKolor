@@ -147,7 +147,13 @@
                 scope.$watch(function(){return CKolorFactory.ckoloring;}, function(newVal, oldVal){
                     if(CKolorFactory.ckoloring === false && CKolorFactory.modelId === modelId){
                         clearBlurs();
-                    }
+
+                        /* Also don't reuse the existing color wheel (in this HABPanel fork) - @ghys */
+                        if (wheel) {
+                            var el = body.querySelector('a-ckolor-wheel');
+                            el.remove();
+                            wheel = null;
+                    }                    }
                 });
             }
         };
