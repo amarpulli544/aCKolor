@@ -89,27 +89,14 @@
                     saturation.addEventListener('touchmove', saturationMove, false);
                 };
 
-                /* On mouse down, add mouse move and up listeners to detect dragging start/end */
-                // var alphaDown = function(e){
-                //     /* Alpha slider dimensions */
-                //     arect = alpha.getBoundingClientRect();
-                //     /* Called to update colors if only a click */
-                //     alphaMove(e);
-                //     /* Add mouse move event listeners */
-				// 	//alpha
-                //     body.addEventListener('mousemove', alphaMove, true);
-                // };
-
                 wheel.addEventListener('mousedown', wheelDown, true);
                 wheel.addEventListener('touchstart', wheelDown, true);
-                //wheel.addEventListener('touchmove', wheelMove, false);
+
                 saturation.addEventListener('mousedown', saturationDown, true);
                 saturation.addEventListener('touchstart', saturationDown, false);
-                //saturation.addEventListener('touchmove', saturationMove, false);
-                //alpha.addEventListener('mousedown', alphaDown, true);
 
 				body.addEventListener('mouseup', mouseUpped, true);
-                body.addEventListener('touchup', mouseUpped, false);
+                body.addEventListener('touchend', mouseUpped, false);
                 /* End DOM Manipulations */
 
                 /* If HSL is updated and valid, trigeer the other color formats to be updated */
