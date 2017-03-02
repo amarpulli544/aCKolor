@@ -37,6 +37,7 @@
 					if(scope.blur === true || scope.blur === undefined){
 						$body.removeClass('c-ckolor__overlay-blur');
 					}
+                    $body.removeClass('c-ckolor__modal');
                 }
 
 				function setCircleWidth(){
@@ -71,6 +72,7 @@
 					if(scope.blur === true || scope.blur === undefined){
 						$body.addClass('c-ckolor__overlay-blur');
 					}
+                    $body.addClass('c-ckolor__modal');
 
                     /* Init color wheel */
                     CKolorFactory.init({

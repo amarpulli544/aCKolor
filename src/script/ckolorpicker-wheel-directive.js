@@ -45,7 +45,7 @@
 
                 /* Mouse movement on saturation slider, update saturation */
                 var saturationMove = function(e){
-                    var x = e.pageX - (srect.left);
+                    var x = ((e.changedTouches) ? e.changedTouches[0].clientX : e.pageX) - (srect.left);
 					var saturationValue = Math.round((x / srect.width) * 100);
 
 					if(saturationValue < 0){
@@ -59,29 +59,12 @@
                     });
                 };
 
-                /* Mouse movement on saturation slider, update alpha */
-                var alphaMove = function(e){
-                    var x = e.pageX - (arect.left);
-					var alphaValue = Math.round((x / arect.width) * 100);
-
-					if(alphaValue < 0){
-						alphaValue = 0;
-					}else if(alphaValue > 100){
-						alphaValue = 100;
-					}
-
-                    CKolorFactory.alpha = alphaValue;
-
-                    $timeout(function(){
-                        CKolorFactory.updateHSL();
-                    });
-                };
-
-                /* On body-> mouseup, clear out mousemove event listeners */
+                /* On body-> mouseup, clear out mousemove/touchmove event listeners */
                 var mouseUpped = function(e){
                     body.removeEventListener('mousemove', wheelMove, true);
+                    body.removeEventListener('touchmove', wheelMove, true);
                     body.removeEventListener('mousemove', saturationMove, true);
-					body.removeEventListener('mousemove', alphaMove, true);
+                    body.removeEventListener('touchmove', saturationMove, true);
                 };
 
                 /* On mouse down, add mouse move and up listeners to detect dragging start/end */
@@ -92,6 +75,7 @@
                     wheelMove(e);
                     /* Add mouse move event listeners */
                     body.addEventListener('mousemove', wheelMove, true);
+                    wheel.addEventListener('touchmove', wheelMove, false);
                 };
 
                 /* On mouse down, add mouse move and up listeners to detect dragging start/end */
@@ -102,24 +86,30 @@
                     saturationMove(e);
                     /* Add mouse move event listeners */
                     body.addEventListener('mousemove', saturationMove, true);
+                    saturation.addEventListener('touchmove', saturationMove, false);
                 };
 
                 /* On mouse down, add mouse move and up listeners to detect dragging start/end */
-                var alphaDown = function(e){
-                    /* Alpha slider dimensions */
-                    arect = alpha.getBoundingClientRect();
-                    /* Called to update colors if only a click */
-                    alphaMove(e);
-                    /* Add mouse move event listeners */
-					//alpha
-                    body.addEventListener('mousemove', alphaMove, true);
-                };
+                // var alphaDown = function(e){
+                //     /* Alpha slider dimensions */
+                //     arect = alpha.getBoundingClientRect();
+                //     /* Called to update colors if only a click */
+                //     alphaMove(e);
+                //     /* Add mouse move event listeners */
+				// 	//alpha
+                //     body.addEventListener('mousemove', alphaMove, true);
+                // };
 
                 wheel.addEventListener('mousedown', wheelDown, true);
+                wheel.addEventListener('touchstart', wheelDown, true);
+                //wheel.addEventListener('touchmove', wheelMove, false);
                 saturation.addEventListener('mousedown', saturationDown, true);
-                alpha.addEventListener('mousedown', alphaDown, true);
+                saturation.addEventListener('touchstart', saturationDown, false);
+                //saturation.addEventListener('touchmove', saturationMove, false);
+                //alpha.addEventListener('mousedown', alphaDown, true);
 
 				body.addEventListener('mouseup', mouseUpped, true);
+                body.addEventListener('touchup', mouseUpped, false);
                 /* End DOM Manipulations */
 
                 /* If HSL is updated and valid, trigeer the other color formats to be updated */

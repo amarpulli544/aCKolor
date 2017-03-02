@@ -14,8 +14,8 @@ a-ckolor-wheel {
 
 .c-ckolor__input-wrapper {
   width: 200px;
-  height: 21px;
-  line-height: 21px;
+  height: 60px;
+  line-height: 60px;
   padding: 7px;
   background: #fff;
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.14), 0px 3px 10px rgba(0, 0, 0, 0.035);
@@ -32,9 +32,9 @@ a-ckolor-wheel {
   background: transparent;
   border: none;
   -webkit-appearance: none;
-  width: 21px;
-  font-size: 18px;
-  padding: 0px;
+  width: 50px;
+  font-size: 40px;
+  padding: 5px;
   color: #fff;
   opacity: .7;
   box-shadow: none;
@@ -49,6 +49,11 @@ a-ckolor-wheel {
 .c-ckolor__input-wrapper span {
   display: inline-block;
   vertical-align: middle;
+}
+
+.c-ckolor__modal {
+  overflow: hidden;
+  position: fixed;
 }
 
 .c-ckolor__overlay {
@@ -125,8 +130,9 @@ a-ckolor-wheel {
   width: 30px;
 }
 .c-ckolor__overlay .c-ckolor__input-wrapper.button {
-  width: 9%;
+  width: calc(50% - 22px);
   vertical-align: middle;
+  text-align: center;
   margin: 0px 0px 0px 2px;
 }
 .c-ckolor__overlay .c-ckolor__input-wrapper.dropdown {
@@ -268,8 +274,8 @@ a-ckolor-wheel {
 }
 
 .c-ckolor__swatch {
-  width: 14px;
-  height: 14px;
+  width: 50px;
+  height: 50px;
   display: inline-block;
   vertical-align: middle;
   border-radius: 2px;

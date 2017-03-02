@@ -153,6 +153,17 @@
 
 			/* Get HSL from a point on color wheel */
 			hueLightFromRadial: function(e, wheel){
+				var x, y;
+
+				/* handle touch event */
+				if (e.changedTouches) {
+					x = e.changedTouches[0].clientX;
+					y = e.changedTouches[0].clientY;
+				} else {
+					x = e.pageX;
+					y = e.pageY;
+				}
+
 				/* Get color wheel dimensions */
 				var rect = wheel.getBoundingClientRect();
 				var radius = rect.width / 2;
@@ -164,8 +175,8 @@
 				var cy = radius + top;
 
 				/* Mouse position distance from color wheel center */
-				var dx = e.pageX - cx;
-				var dy = e.pageY - cy;
+				var dx = x - cx;
+				var dy = y - cy;
 
 				/* Hue degrees */
 				var angle = Math.atan2(dy, dx) * (180 / Math.PI);

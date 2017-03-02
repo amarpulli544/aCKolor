@@ -17,9 +17,9 @@ pkg = require('./package.json'),
 sourcemaps = require('gulp-sourcemaps'),
 jshint = require('gulp-jshint'),
 browserSync = require('browser-sync').create(),
-awspublish = require('gulp-awspublish'),
+//awspublish = require('gulp-awspublish'),
 runSequence = require('run-sequence'),
-cloudfront = require('gulp-cloudfront-invalidate-aws-publish'),
+//cloudfront = require('gulp-cloudfront-invalidate-aws-publish'),
 toMarkdown = require('gulp-to-markdown');
 
 var notifyInfo = {
@@ -49,7 +49,7 @@ var stylesToDo = [
 ];
 
 var stylesToDoVender = [
-	'bower_components/font-awesome/css/font-awesome.min.css'
+	//'bower_components/font-awesome/css/font-awesome.min.css'
 ];
 
 var htmlToDo = [
@@ -250,7 +250,7 @@ gulp.task('styles_vendor', function() {
 
 
 var moveFonts = [
-	'bower_components/font-awesome/fonts/*.*'
+	//'bower_components/font-awesome/fonts/*.*'
 ];
 
 
@@ -314,22 +314,22 @@ gulp.task('app_scripts', function() {
 
 
 
-var awsConfObject = require('./aws-config.json');
+//var awsConfObject = require('./aws-config.json');
 
-var localConfig = {
-	buildSrc: './build/**/*',
-	getAwsConf: function (environment) {
-		// var conf = require('../../config/aws');
+// var localConfig = {
+// 	buildSrc: './build/**/*',
+// 	getAwsConf: function (environment) {
+// 		// var conf = require('../../config/aws');
 
-		if (!awsConfObject[environment]) {
-			throw 'No aws conf for env: ' + environment;
-		}
-		if (!awsConfObject[environment + 'Headers']) {
-			throw 'No aws headers for env: ' + environment;
-		}
-		return { keys: awsConfObject[environment], headers: awsConfObject[environment + 'Headers'], distribution: awsConfObject[environment + 'Distribution'] };
-	}
-};
+// 		if (!awsConfObject[environment]) {
+// 			throw 'No aws conf for env: ' + environment;
+// 		}
+// 		if (!awsConfObject[environment + 'Headers']) {
+// 			throw 'No aws headers for env: ' + environment;
+// 		}
+// 		return { keys: awsConfObject[environment], headers: awsConfObject[environment + 'Headers'], distribution: awsConfObject[environment + 'Distribution'] };
+// 	}
+// };
 
 
 
@@ -402,9 +402,9 @@ gulp.task('live', function() {
 });
 
 gulp.task('default', [
-	'move_fonts',
+	//'move_fonts',
 	'styles',
-	'styles_vendor',
+	//'styles_vendor',
 	'vendor_scripts',
 	'app_scripts',
 	'browser-sync',

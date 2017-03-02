@@ -1,19 +1,21 @@
 {
 	"name": "aCKolor",
-	"version": "2.0.1",
-	"description": "Angular color picker",
+	"version": "3.0.0-habpanel",
+	"description": "aCKolor fork for HABPanel",
 	"keywords": [
 		"Angular",
 		"color",
 		"color picker"
 	],
 	"author": "Chris Kelsey",
+	"contributors": [
+		"Yannick Schaus"
+	],
 	"license": "MIT",
-	"homepage": "https://github.com/ckelsey/aCKolor",
+	"homepage": "https://github.com/ghys/aCKolor",
 	"dependencies": {
 		"bower": "^*",
 		"browser-sync": "^*",
-		"fs": "^*",
 		"gulp": "^*",
 		"gulp-angular-embed-templates": "^*",
 		"gulp-autoprefixer": "^*",
@@ -41,11 +43,10 @@
 		"postinstall": "gulp install && bower install && gulp"
 	},
 	"bower": {
-		"angular": "latest",
-		"angular-loader": "latest",
-		"angular-resource": "latest",
-		"angular-route": "latest",
-		"angular-sanitize": "latest",
-		"font-awesome": "latest"
+		"angular": "~1.5.11",
+		"angular-loader": "~1.5.11",
+		"angular-resource": "~1.5.11",
+		"angular-route": "~1.5.11",
+		"angular-sanitize": "~1.5.11"
 	}
 }
