@@ -413,4 +413,4 @@
 		return self;
 	})
 	;
-})(angular.module('aCKolor',[]));angular.module('aCKolor', ['ngTouch']);
+})(angular.module('aCKolor',[]));
