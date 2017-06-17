@@ -78,7 +78,7 @@
 					}
 					localStorage.aCKolorPreviousColors = angular.toJson(self.previousColors);
 				}
-				//self.toggleCKoloring();
+				self.toggleCKoloring();
 			},
 
 			previousColorClick: function(color){
