@@ -19,7 +19,7 @@
 
 			<div class="c-ckolor__input-row">
 				<div class="c-ckolor__saturation" ng-style="{background: 'linear-gradient(to right, hsl(' + CKolorFactory.hsl.h + ',0%,' + CKolorFactory.hsl.l + '%), hsl(' + CKolorFactory.hsl.h + ',100%,' + CKolorFactory.hsl.l + '%) 100%)'}">
-					<div class="c-ckolor__saturation-handle" style="left: {{CKolorFactory.hsl.s}}%"></div>
+					<div class="c-ckolor__saturation-handle" style="left: {{CKolorFactory.hsl.s}}%" ng-click="CKolorFactory.save()" ></div>
 				</div>
 			</div>
 
