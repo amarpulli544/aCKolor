@@ -55,6 +55,8 @@ a-ckolor-wheel{
 	}
 }
 
+
+
 .c-ckolor__modal {
     overflow: hidden;
     position: fixed;
@@ -397,4 +399,74 @@ a-ckolor-wheel{
 			transform: scale(1.1);
 		}
 	}
+}
+
+.c-ckolor__overlay {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    left: 0;
+    top: 0;
+    background: radial-gradient(ellipse at 50% 250px,rgba(255, 255, 255, 0.91) 0,#ffffff 100%);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    z-index: 9999;
+}
+
+
+
+/*added */
+.c-ckolor__overlay {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    left: 0;
+    top: 0;
+    background: radial-gradient(ellipse at 50% 250px,rgba(255, 255, 255, 0.91) 0,#ffffff 100%);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    z-index: 9999;
+}
+
+.c-ckolor__close-btn, .c-ckolor__save-btn {
+    height: 30px;
+}
+
+.c-ckolor__input-wrapper button {
+    outline: 0!important;
+    outline-color: initial;
+    outline-style: initial;
+    outline-width: 0px;
+    background: 0 0;
+    background-image: initial;
+    background-position-x: 0px;
+    background-position-y: 0px;
+    background-size: initial;
+    background-repeat-x: initial;
+    background-repeat-y: initial;
+    background-attachment: initial;
+    background-origin: initial;
+    background-clip: initial;
+    background-color: initial;
+    border-color: #121211;
+    border-top-color: #121211;
+    border-right-color: #121211;
+    border-bottom-color: #121211;
+    border-left-color: #121211;
+    -webkit-appearance: none;
+    font-size: 20px;
+    padding: 5px;
+    padding-top: 5px;
+    padding-right: 5px;
+    padding-bottom: 5px;
+    padding-left: 5px;
+    color: #080808;
+    opacity: .7;
+    box-shadow: none;
+    cursor: pointer;
+    transition: all .2s;
+    transition-property: all;
+    transition-duration: 0.2s;
+    transition-timing-function: initial;
+    transition-delay: initial;
 }
